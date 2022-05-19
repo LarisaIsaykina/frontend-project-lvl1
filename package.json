@@ -17,9 +17,6 @@
     "url": "https://github.com/LarisaIsaykina/frontend-project-lvl1/issues"
   },
   "homepage": "https://github.com/LarisaIsaykina/frontend-project-lvl1#readme",
-  "bin": {
-    "brain-games": "bin/brain-games.js"
-  },
   "dependencies": {
     "readline-sync": "^1.4.10"
   },
@@ -30,5 +27,9 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jest": "^26.2.2",
     "jest": "^28.1.0"
+  },
+  "bin": {
+    "brain-games": "bin/brain-games.js",
+    "brain-even": "bin/brain-even.js"
   }
 }
