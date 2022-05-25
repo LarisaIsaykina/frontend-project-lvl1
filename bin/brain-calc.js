@@ -1,25 +1,26 @@
 #!/usr/bin/env node
+
 import {
   // eslint-disable-next-line max-len
-  greeting, askUserName, getRandomDigit, getUserAnswer, isEven, checkFirstLevel,
+  greeting, askUserName, getRandomDigit, getUserAnswer, getRandomSign, calculateCorrectAnswer, checkFirstLevel,
 } from '../src/index.js';
 
 const userName = askUserName();
 greeting(userName);
 
-console.log('Answer "yes" if the number is even, otherwise answer "no".');
+console.log('What is the result of the expression?');
 
-// eslint-disable-next-line import/prefer-default-export
+const collOfSigns = ['+', '-', '*'];
 
 const playWithUser = () => {
   let i = 0;
   while (i <= 2) {
-    const randomNumber = getRandomDigit(1, 100);
-
-    console.log(`Question: ${randomNumber}`);
-
-    const userAnswer = getUserAnswer();
-    const correctAnswer = isEven(randomNumber);
+    const randomSign = getRandomSign(collOfSigns);
+    const firstNumber = getRandomDigit(1, 100);
+    const secondNumber = getRandomDigit(1, 100);
+    console.log(`Question: ${firstNumber} ${randomSign} ${secondNumber} `);
+    const userAnswer = Number(getUserAnswer());
+    const correctAnswer = calculateCorrectAnswer(firstNumber, secondNumber, randomSign);
 
     const boolean = checkFirstLevel(correctAnswer, userAnswer);
     if (boolean === true) {
@@ -31,5 +32,4 @@ const playWithUser = () => {
     }
   } console.log(`Congratulations, ${userName}!`);
 };
-
 playWithUser();

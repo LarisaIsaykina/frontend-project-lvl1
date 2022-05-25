@@ -1,27 +1,28 @@
 #!/usr/bin/env node
+
 import {
   // eslint-disable-next-line max-len
-  greeting, askUserName, getRandomDigit, getUserAnswer, isEven, checkFirstLevel,
+  greeting, askUserName, getUserAnswer, generateProgression,
+  checkFirstLevel,
 } from '../src/index.js';
 
 const userName = askUserName();
 greeting(userName);
 
-console.log('Answer "yes" if the number is even, otherwise answer "no".');
-
-// eslint-disable-next-line import/prefer-default-export
+console.log('What number is missing in the progression?');
 
 const playWithUser = () => {
   let i = 0;
   while (i <= 2) {
-    const randomNumber = getRandomDigit(1, 100);
+    const pair = generateProgression();
 
-    console.log(`Question: ${randomNumber}`);
+    console.log(`Question: ${pair[0]}`);
 
-    const userAnswer = getUserAnswer();
-    const correctAnswer = isEven(randomNumber);
+    const userAnswer = Number(getUserAnswer());
+    const correctAnswer = pair[1];
 
     const boolean = checkFirstLevel(correctAnswer, userAnswer);
+
     if (boolean === true) {
       console.log('Correct!');
       i += 1;
@@ -31,5 +32,4 @@ const playWithUser = () => {
     }
   } console.log(`Congratulations, ${userName}!`);
 };
-
 playWithUser();

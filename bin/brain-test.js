@@ -1,26 +1,23 @@
 #!/usr/bin/env node
+
 import {
-  // eslint-disable-next-line max-len
-  greeting, askUserName, getRandomDigit, getUserAnswer, isEven, checkFirstLevel,
+  greeting, askUserName, getRandomDigit, getUserAnswer, isPrime, checkFirstLevel,
 } from '../src/index.js';
 
 const userName = askUserName();
 greeting(userName);
 
-console.log('Answer "yes" if the number is even, otherwise answer "no".');
-
-// eslint-disable-next-line import/prefer-default-export
+console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 
 const playWithUser = () => {
   let i = 0;
   while (i <= 2) {
-    const randomNumber = getRandomDigit(1, 100);
+    const num = getRandomDigit(1, 100);
 
-    console.log(`Question: ${randomNumber}`);
+    console.log(`Question: ${num}`);
 
     const userAnswer = getUserAnswer();
-    const correctAnswer = isEven(randomNumber);
-
+    const correctAnswer = isPrime(num);
     const boolean = checkFirstLevel(correctAnswer, userAnswer);
     if (boolean === true) {
       console.log('Correct!');
