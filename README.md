@@ -6,7 +6,7 @@
 
 The set of five console games based on elementary mathematical operations, where a user is offered to figure out:
 1 - whether a number is even or odd (brain-even game);
-2 - whether a number prime or composite (brain-prime game);
+2 - whether a number is prime or composite (brain-prime game);
 3 - the result of an expression (brain-calc game);
 4 - the missed member of a progression (brain-progression);
 5 - the greatest common divisor of two numbers (brain-gcd game).
