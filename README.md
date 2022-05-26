@@ -28,7 +28,7 @@ Installation:
 
 npm install Brain games
 
-launch: make 'name of the game' OR 'name of the game
+launch: make 'name of the game' OR 'name of the game'
  
 Demonstration:
  
