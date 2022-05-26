@@ -31,7 +31,7 @@ const generateProgression = () => {
       i += 1;
     }
   }
-  return [arr.join('  '), hiddenValue];
+  return [arr.join(' '), hiddenValue];
 };
 
 // eslint-disable-next-line import/prefer-default-export
