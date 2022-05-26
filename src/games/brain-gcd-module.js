@@ -38,7 +38,7 @@ export const playWithUser = () => {
   while (i <= 2) {
     const firstNumber = getRandomDigit(1, 100);
     const secondNumber = getRandomDigit(1, 100);
-    console.log(`Question: ${firstNumber}   ${secondNumber} `);
+    console.log(`Question: ${firstNumber} ${secondNumber} `);
     const userAnswer = Number(getUserAnswer());
     const correctAnswer = findGcd(firstNumber, secondNumber);
 
