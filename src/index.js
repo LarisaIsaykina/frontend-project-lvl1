@@ -1,6 +1,7 @@
 import readlineSync from 'readline-sync';
 
 export const askUserName = () => {
+  console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name?  ');
   return userName;
 };
@@ -31,6 +32,6 @@ export const check = (correctAnswer, userAnswer, userName) => {
     console.log('Correct!');
     return true;
   }
-  console.log(`'${userAnswer}' is a wrong answer ;(. Correct answer was '${correctAnswer}'. Try again, ${userName}!`);
+  console.log(`'${userAnswer}' is a wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${userName}!`);
   return false;
 };
