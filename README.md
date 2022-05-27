@@ -2,7 +2,6 @@
 
 [![Actions Status](https://github.com/LarisaIsaykina/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/LarisaIsaykina/frontend-project-lvl1/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/3f8ee3a9d1760aabba63/maintainability)](https://codeclimate.com/github/LarisaIsaykina/frontend-project-lvl1/maintainability)
-<a href="https://codeclimate.com/github/LarisaIsaykina/frontend-project-lvl1/test_coverage"><img src="https://api.codeclimate.com/v1/badges/3f8ee3a9d1760aabba63/test_coverage" /></a>
 [![Actions Status](https://github.com/LarisaIsaykina/frontend-project-lvl1/actions/workflows/nodejs.yml/badge.svg)](https://github.com/LarisaIsaykina/frontend-project-lvl1/actions/workflows/nodejs.yml)
 
 The set of five console games based on elementary mathematical operations, where a user is offered to figure out:
