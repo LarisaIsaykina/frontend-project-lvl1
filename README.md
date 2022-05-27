@@ -1,7 +1,7 @@
 ### Hexlet tests and linter status:
 
 [![Actions Status](https://github.com/LarisaIsaykina/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/LarisaIsaykina/frontend-project-lvl1/actions)
-<a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
+[![Maintainability](https://api.codeclimate.com/v1/badges/3f8ee3a9d1760aabba63/maintainability)](https://codeclimate.com/github/LarisaIsaykina/frontend-project-lvl1/maintainability)
 [![Actions Status](https://github.com/LarisaIsaykina/frontend-project-lvl1/actions/workflows/nodejs.yml/badge.svg)](https://github.com/LarisaIsaykina/frontend-project-lvl1/actions/workflows/nodejs.yml)
 
 The set of five console games based on elementary mathematical operations, where a user is offered to figure out:
@@ -12,7 +12,7 @@ The set of five console games based on elementary mathematical operations, where
 
 3 - the result of an expression ('brain-calc' game);
 
-4 - the missed member of a progression ('brain-progression' game);
+4 - the missing member of a progression ('brain-progression' game);
 
 5 - the greatest common divisor of two numbers ('brain-gcd' game).
 
