@@ -5,12 +5,12 @@ import {
 } from '../index.js';
 import { getRandomDigit } from '../utils.js';
 
-const normalizeUserAnswer = (answer) => {
+const normalize = (answer) => {
   switch (answer) {
-    case 'yes':
-      return true;
-    case 'no':
-      return false;
+    case true:
+      return 'yes';
+    case false:
+      return 'no';
     default:
       return answer;
   }
@@ -37,9 +37,9 @@ const generateRound = () => {
   const num = getRandomDigit(1, 100);
   console.log(`Question: ${num}`);
   const userAnswer = getUserAnswer();
-  const normalizedUserAnswer = normalizeUserAnswer(userAnswer);
   const correctAnswer = isPrime(num);
-  return [normalizedUserAnswer, correctAnswer];
+  const normalizedAnswer = normalize(correctAnswer);
+  return [userAnswer, normalizedAnswer];
 };
 
 export const playWithUser = () => {
