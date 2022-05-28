@@ -1,6 +1,5 @@
 install:
 	npm ci
-
 brain-games:
 	node bin/brain-games.js
 brain-even:
@@ -13,9 +12,6 @@ brain-progression:
 	node bin/brain-progression.js
 brain-prime:
 	node bin/brain-prime.js
-
-brain-test:
-	node bin/brain-test.js
 publish:
 	npm publish --dry-run
 

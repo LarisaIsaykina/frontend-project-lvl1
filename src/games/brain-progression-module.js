@@ -1,12 +1,8 @@
 import {
   // eslint-disable-next-line max-len
-  greeting, askUserName, getRandomDigit, getUserAnswer, check,
+  getUserAnswer, interactWithUser,
 } from '../index.js';
-
-const userName = askUserName();
-greeting(userName);
-
-console.log('What number is missing in the progression?');
+import { getRandomDigit } from '../utils.js';
 
 const generateProgression = () => {
   const step = getRandomDigit(2, 7);
@@ -34,21 +30,15 @@ const generateProgression = () => {
   return [arr.join(' '), hiddenValue];
 };
 
+const generateRound = () => {
+  const progression = generateProgression();
+  console.log(`Question: ${progression[0]}`);
+  const userAnswer = Number(getUserAnswer());
+  const correctAnswer = progression[1];
+  return [userAnswer, correctAnswer];
+};
+
 // eslint-disable-next-line import/prefer-default-export
 export const playWithUser = () => {
-  let i = 0;
-  while (i <= 2) {
-    const pair = generateProgression();
-
-    console.log(`Question: ${pair[0]}`);
-
-    const userAnswer = Number(getUserAnswer());
-    const correctAnswer = pair[1];
-
-    if (check(correctAnswer, userAnswer, userName) === true) {
-      i += 1;
-    } else {
-      return;
-    }
-  } console.log(`Congratulations, ${userName}!`);
+  interactWithUser('What number is missing in the progression?', generateRound);
 };

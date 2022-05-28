@@ -15,23 +15,20 @@ export const getUserAnswer = () => {
   return userAnswer;
 };
 
-export const getRandomDigit = (min, max) => {
-  const number = Math.random() * (max - min) + min;
-  return Math.round(number);
-};
+export const interactWithUser = (gameTask, getAnswers) => {
+  const userName = askUserName();
+  greeting(userName);
 
-export const checkFirstLevel = (correctAnswer, userAnswer) => {
-  if (userAnswer === correctAnswer) {
-    return true;
-  }
-  return false;
-};
-
-export const check = (correctAnswer, userAnswer, userName) => {
-  if (userAnswer === correctAnswer) {
-    console.log('Correct!');
-    return true;
-  }
-  console.log(`'${userAnswer}' is a wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${userName}!`);
-  return false;
+  console.log(gameTask);
+  let i = 0;
+  while (i <= 2) {
+    const pairOfAnswers = getAnswers();
+    if (pairOfAnswers[0] === pairOfAnswers[1]) {
+      console.log('Correct!');
+      i += 1;
+    } else {
+      console.log(`'${pairOfAnswers[0]}' is a wrong answer ;(. Correct answer was '${pairOfAnswers[1]}'. Let's try again, ${userName}!`);
+      return;
+    }
+  } console.log(`Congratulations, ${userName}!`);
 };
