@@ -3,7 +3,7 @@ import {
 } from '../index.js';
 import { getRandomDigit } from '../utils.js';
 
-const collOfSymbols = ['+', '-', '*'];
+const symbols = ['+', '-', '*'];
 
 const calculateCorrectAnswer = (firstNum, secondNum, symbol) => {
   switch (symbol) {
@@ -19,7 +19,7 @@ const calculateCorrectAnswer = (firstNum, secondNum, symbol) => {
 };
 
 const generateRound = () => {
-  const randomSymbol = collOfSymbols[getRandomDigit(0, collOfSymbols.length - 1)];
+  const randomSymbol = symbols[getRandomDigit(0, symbols.length - 1)];
   const firstNumber = getRandomDigit(1, 100);
   const secondNumber = getRandomDigit(1, 100);
   console.log(`Question: ${firstNumber} ${randomSymbol} ${secondNumber} `);
