@@ -32,12 +32,4 @@ launch: make 'name of the game' OR 'name of the game'
  
 Demonstration:
  
-brain-even  https://asciinema.org/a/0zhELvbPpGUr3BmpaIa2QYdGM
- 
-brain-calc https://asciinema.org/a/dGG8IS5GzyazbTETXl4jiG2Km
- 
-brain-gcd  https://asciinema.org/a/tEKHNeVBcqQQVkqM0k0PpqLGs
- 
-brain-progression https://asciinema.org/a/8bwzAQTnIArEwPplzxJd5GjIR
- 
-brain-prime https://asciinema.org/a/T1Rgw0gR5zpJlBUcGrHDksOwC
+https://asciinema.org/a/TuzhNIrO3STBOpI4DXAmn21pT
