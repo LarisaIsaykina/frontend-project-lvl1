@@ -1,35 +1,19 @@
 /* eslint-disable import/prefer-default-export */
 import {
   // eslint-disable-next-line max-len
-  getUserAnswer, interactWithUser,
+  interactWithUser,
 } from '../index.js';
 import { getRandomDigit } from '../utils.js';
 
-const isEven = (number) => {
-  const remainder = number % 2;
-  if (remainder === 0) {
-    return true;
-  }
-  return false;
-};
-const normalize = (answer) => {
-  switch (answer) {
-    case true:
-      return 'yes';
-    case false:
-      return 'no';
-    default:
-      return answer;
-  }
-};
+const isEven = (number) => number % 2 === 0;
 
 const generateRound = () => {
-  const num = getRandomDigit(1, 100);
+  const min = 1;
+  const max = 299;
+  const num = getRandomDigit(min, max);
   console.log(`Question: ${num}`);
-  const userAnswer = getUserAnswer();
-  const correctAnswer = isEven(num);
-  const normalizedAnswer = normalize(correctAnswer);
-  return [userAnswer, normalizedAnswer];
+  const correctAnswer = isEven(num) ? 'yes' : 'no';
+  return correctAnswer;
 };
 
 export const playWithUser = () => {

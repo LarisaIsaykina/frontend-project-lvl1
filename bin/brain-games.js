@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import { playWithUser } from '../src/games/brain-games-module.js';
+import { greeting } from '../src/cli.js';
 
-playWithUser();
+greeting();

@@ -1,5 +1,5 @@
 import {
-  getUserAnswer, interactWithUser,
+  interactWithUser,
 } from '../index.js';
 import { getRandomDigit } from '../utils.js';
 
@@ -20,12 +20,13 @@ const calculateCorrectAnswer = (firstNum, secondNum, symbol) => {
 
 const generateRound = () => {
   const randomSymbol = symbols[getRandomDigit(0, symbols.length - 1)];
-  const firstNumber = getRandomDigit(1, 100);
-  const secondNumber = getRandomDigit(1, 100);
+  const min = 1;
+  const max = 100;
+  const firstNumber = getRandomDigit(min, max);
+  const secondNumber = getRandomDigit(min, max);
   console.log(`Question: ${firstNumber} ${randomSymbol} ${secondNumber} `);
-  const userAnswer = Number(getUserAnswer());
   const correctAnswer = calculateCorrectAnswer(firstNumber, secondNumber, randomSymbol);
-  return [userAnswer, correctAnswer];
+  return correctAnswer.toString();
 };
 // eslint-disable-next-line import/prefer-default-export
 export const playWithUser = () => {

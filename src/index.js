@@ -1,33 +1,21 @@
+/* eslint-disable import/prefer-default-export */
 import readlineSync from 'readline-sync';
+import { greeting } from './cli.js';
 
-export const askUserName = () => {
-  console.log('Welcome to the Brain Games!');
-  const userName = readlineSync.question('May I have your name?  ');
-  return userName;
-};
-
-export const greeting = (userName) => {
-  console.log(`Hello, ${userName}!`);
-};
-
-export const getUserAnswer = () => {
-  const userAnswer = readlineSync.question('Your answer: ');
-  return userAnswer;
-};
-
-export const interactWithUser = (gameTask, getAnswers) => {
-  const userName = askUserName();
-  greeting(userName);
-
+export const interactWithUser = (gameTask, getAnswer) => {
+  const userName = greeting();
   console.log(gameTask);
-  let i = 0;
-  while (i <= 2) {
-    const pairOfAnswers = getAnswers();
-    if (pairOfAnswers[0] === pairOfAnswers[1]) {
+  let i = 1;
+  const roundCount = 3;
+  while (i <= roundCount) {
+    const correctAnswer = getAnswer();
+    const userAnswer = readlineSync.question('Your answer: ');
+
+    if (correctAnswer === userAnswer) {
       console.log('Correct!');
       i += 1;
     } else {
-      console.log(`'${pairOfAnswers[0]}' is a wrong answer ;(. Correct answer was '${pairOfAnswers[1]}'. Let's try again, ${userName}!`);
+      console.log(`'${userAnswer}' is a wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${userName}!`);
       return;
     }
   } console.log(`Congratulations, ${userName}!`);

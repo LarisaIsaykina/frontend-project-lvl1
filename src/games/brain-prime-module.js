@@ -1,20 +1,9 @@
 /* eslint-disable import/prefer-default-export */
 import {
   // eslint-disable-next-line max-len
-  getUserAnswer, interactWithUser,
+  interactWithUser,
 } from '../index.js';
 import { getRandomDigit } from '../utils.js';
-
-const normalize = (answer) => {
-  switch (answer) {
-    case true:
-      return 'yes';
-    case false:
-      return 'no';
-    default:
-      return answer;
-  }
-};
 
 const isPrime = (value) => {
   let divisor = value;
@@ -34,12 +23,12 @@ const isPrime = (value) => {
 };
 
 const generateRound = () => {
-  const num = getRandomDigit(1, 100);
+  const min = 1;
+  const max = 300;
+  const num = getRandomDigit(min, max);
   console.log(`Question: ${num}`);
-  const userAnswer = getUserAnswer();
-  const correctAnswer = isPrime(num);
-  const normalizedAnswer = normalize(correctAnswer);
-  return [userAnswer, normalizedAnswer];
+  const correctAnswer = isPrime(num) ? 'yes' : 'no';
+  return correctAnswer;
 };
 
 export const playWithUser = () => {

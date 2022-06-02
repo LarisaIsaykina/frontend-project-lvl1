@@ -1,20 +1,17 @@
 import {
   // eslint-disable-next-line max-len
-  getUserAnswer, interactWithUser,
+  interactWithUser,
 } from '../index.js';
 import { getRandomDigit } from '../utils.js';
 
-const generateProgression = () => {
-  const step = getRandomDigit(2, 7);
-  const firstMember = getRandomDigit(1, 200);
-  const hiddenIndex = getRandomDigit(0, 9);
+const generateProgression = (firstMember, step, length, hiddenIndex) => {
   const arr = [];
   let i = 0;
   let firstDigit = firstMember;
 
   let hiddenValue;
 
-  while (i <= 9) {
+  while (i <= length - 1) {
     if (i === hiddenIndex) {
       arr.push('..');
       hiddenValue = firstMember + step * hiddenIndex;
@@ -31,11 +28,20 @@ const generateProgression = () => {
 };
 
 const generateRound = () => {
-  const progression = generateProgression();
+  const lengthOfProgression = 10;
+  const minStep = 2;
+  const maxStep = 9;
+  const step = getRandomDigit(minStep, maxStep);
+  const minValue = 1;
+  const maxValue = 200;
+  const firstMember = getRandomDigit(minValue, maxValue);
+  const minIndex = 0;
+  const maxIndex = lengthOfProgression - 1;
+  const hiddenIndex = getRandomDigit(minIndex, maxIndex);
+  const progression = generateProgression(firstMember, step, lengthOfProgression, hiddenIndex);
   console.log(`Question: ${progression[0]}`);
-  const userAnswer = Number(getUserAnswer());
   const correctAnswer = progression[1];
-  return [userAnswer, correctAnswer];
+  return correctAnswer.toString();
 };
 
 // eslint-disable-next-line import/prefer-default-export
