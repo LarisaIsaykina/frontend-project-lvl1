@@ -1,21 +1,19 @@
-/* eslint-disable import/prefer-default-export */
-import {
-  // eslint-disable-next-line max-len
-  interactWithUser,
-} from '../index.js';
-import { getRandomDigit } from '../utils.js';
-
-const isEven = (number) => number % 2 === 0;
+import interactWithUser from '../index.js';
+import { getRandomDigit, isEven } from '../utils.js';
 
 const generateRound = () => {
   const min = 1;
   const max = 299;
   const num = getRandomDigit(min, max);
-  console.log(`Question: ${num}`);
+  const question = `Question: ${num}`;
   const correctAnswer = isEven(num) ? 'yes' : 'no';
-  return correctAnswer;
+
+  return [question, correctAnswer];
 };
 
-export const playWithUser = () => {
-  interactWithUser('Answer "yes" if the number is even, otherwise answer "no".', generateRound);
+const playWithUser = () => {
+  const taskMessage = 'Answer "yes" if the number is even, otherwise answer "no".';
+  interactWithUser(taskMessage, generateRound);
 };
+
+export default playWithUser;

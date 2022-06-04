@@ -1,14 +1,23 @@
-/* eslint-disable import/prefer-default-export */
 import readlineSync from 'readline-sync';
-import { greeting } from './cli.js';
 
-export const interactWithUser = (gameTask, getAnswer) => {
-  const userName = greeting();
+const interactWithUser = (gameTask, generateRoundsData) => {
+  console.log('Welcome to the Brain Games!');
+
+  const userName = readlineSync.question('May I have your name?  ');
+
+  console.log(`Hello, ${userName}!`);
   console.log(gameTask);
+
   let i = 1;
   const roundCount = 3;
+
   while (i <= roundCount) {
-    const correctAnswer = getAnswer();
+    const pairQuestionAnswer = generateRoundsData();
+    const question = pairQuestionAnswer[0];
+    const correctAnswer = pairQuestionAnswer[1];
+
+    console.log(question);
+
     const userAnswer = readlineSync.question('Your answer: ');
 
     if (correctAnswer === userAnswer) {
@@ -20,3 +29,5 @@ export const interactWithUser = (gameTask, getAnswer) => {
     }
   } console.log(`Congratulations, ${userName}!`);
 };
+
+export default interactWithUser;
