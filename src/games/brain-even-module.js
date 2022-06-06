@@ -4,9 +4,7 @@ import { getRandomDigit } from '../utils.js';
 const isEven = (number) => number % 2 === 0;
 
 const generateRound = () => {
-  const min = 1;
-  const max = 299;
-  const num = getRandomDigit(min, max);
+  const num = getRandomDigit(1, 299);
   const question = `Question: ${num}`;
   const correctAnswer = isEven(num) ? 'yes' : 'no';
 

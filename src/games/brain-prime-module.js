@@ -1,27 +1,22 @@
 import interactWithUser from '../index.js';
 import { getRandomDigit } from '../utils.js';
 
-const isPrime = (value) => {
-  let divisor = value;
-  const arr = [];
-  while (divisor > 0) {
-    const remainder = value % divisor;
-    if (remainder === 0) {
-      arr.push(divisor);
-      divisor -= 1;
-    } else {
-      divisor -= 1;
-    }
-  } if (arr.length > 2 || arr.length === 1) {
+const isPrime = (number) => {
+  if (number < 2) {
     return false;
   }
+
+  for (let i = 2; i <= number / 2; i += 1) {
+    if (number % i === 0) {
+      return false;
+    }
+  }
+
   return true;
 };
 
 const generateRound = () => {
-  const min = 1;
-  const max = 300;
-  const num = getRandomDigit(min, max);
+  const num = getRandomDigit(1, 300);
   const question = `Question: ${num}`;
   const correctAnswer = isPrime(num) ? 'yes' : 'no';
 
