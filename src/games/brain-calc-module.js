@@ -1,7 +1,20 @@
 import interactWithUser from '../index.js';
-import { getRandomDigit, calculate } from '../utils.js';
+import { getRandomDigit } from '../utils.js';
 
 const symbols = ['+', '-', '*'];
+
+const calculate = (firstNum, secondNum, symbol) => {
+  switch (symbol) {
+    case '+':
+      return firstNum + secondNum;
+    case '-':
+      return firstNum - secondNum;
+    case '*':
+      return firstNum * secondNum;
+    default:
+      return symbol;
+  }
+};
 
 const generateRound = () => {
   const randomSymbol = symbols[getRandomDigit(0, symbols.length - 1)];

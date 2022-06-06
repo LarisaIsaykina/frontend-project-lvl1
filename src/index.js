@@ -8,10 +8,9 @@ const interactWithUser = (gameTask, generateRoundsData) => {
   console.log(`Hello, ${userName}!`);
   console.log(gameTask);
 
-  let i = 1;
   const roundCount = 3;
 
-  while (i <= roundCount) {
+  for (let i = 1; i <= roundCount; i += 1) {
     const pairQuestionAnswer = generateRoundsData();
     const question = pairQuestionAnswer[0];
     const correctAnswer = pairQuestionAnswer[1];
@@ -20,13 +19,10 @@ const interactWithUser = (gameTask, generateRoundsData) => {
 
     const userAnswer = readlineSync.question('Your answer: ');
 
-    if (correctAnswer === userAnswer) {
-      console.log('Correct!');
-      i += 1;
-    } else {
+    if (correctAnswer !== userAnswer) {
       console.log(`'${userAnswer}' is a wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${userName}!`);
       return;
-    }
+    } console.log('Correct!');
   } console.log(`Congratulations, ${userName}!`);
 };
 

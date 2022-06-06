@@ -1,5 +1,7 @@
 import interactWithUser from '../index.js';
-import { getRandomDigit, isEven } from '../utils.js';
+import { getRandomDigit } from '../utils.js';
+
+const isEven = (number) => number % 2 === 0;
 
 const generateRound = () => {
   const min = 1;

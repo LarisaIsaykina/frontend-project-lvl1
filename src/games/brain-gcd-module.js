@@ -1,5 +1,12 @@
 import interactWithUser from '../index.js';
-import { getRandomDigit, findGcd } from '../utils.js';
+import { getRandomDigit } from '../utils.js';
+
+const findGcd = (firstNum, secondNum) => {
+  if (!secondNum) {
+    return firstNum;
+  }
+  return findGcd(secondNum, firstNum % secondNum);
+};
 
 const generateRound = () => {
   const min = 1;

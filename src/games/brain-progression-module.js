@@ -1,5 +1,25 @@
 import interactWithUser from '../index.js';
-import { getRandomDigit, generateProgression } from '../utils.js';
+import { getRandomDigit } from '../utils.js';
+
+const generateProgression = (firstMember, step, length, hiddenIndex) => {
+  const arr = [];
+  let i = 0;
+  let firstDigit = firstMember;
+
+  while (i <= length - 1) {
+    if (i === hiddenIndex) {
+      arr.push('..');
+      firstDigit += step;
+      i += 1;
+    } else {
+      arr.push(firstDigit);
+      firstDigit += step;
+      i += 1;
+    }
+  }
+
+  return arr.join(' ');
+};
 
 const generateRound = () => {
   const lengthOfProgression = 10;

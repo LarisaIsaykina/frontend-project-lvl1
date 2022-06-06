@@ -1,5 +1,22 @@
 import interactWithUser from '../index.js';
-import { getRandomDigit, isPrime } from '../utils.js';
+import { getRandomDigit } from '../utils.js';
+
+const isPrime = (value) => {
+  let divisor = value;
+  const arr = [];
+  while (divisor > 0) {
+    const remainder = value % divisor;
+    if (remainder === 0) {
+      arr.push(divisor);
+      divisor -= 1;
+    } else {
+      divisor -= 1;
+    }
+  } if (arr.length > 2 || arr.length === 1) {
+    return false;
+  }
+  return true;
+};
 
 const generateRound = () => {
   const min = 1;
